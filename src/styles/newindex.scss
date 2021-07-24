@@ -1,5 +1,15 @@
 h2 {
-	color: aqua;
+	color: rgb(54, 54, 54);
 	display: flex;
-	font-size: 20px;
+	font-size: 28px;
+}
+
+.background {
+	background: url('../images/big_logo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: left;
+	min-height: 300px;
+	max-height: 300px;
+	width: 100%;
 }

@@ -11,21 +11,31 @@ module.exports = {
 	mode,
 	target,
 
+	output: {
+		assetModuleFilename: 'images/[hash][ext][query]',
+	},
 	module: {
 		rules: [
 			{
-				test: /\.jsx?$/,
+				test: /\.jsx?$/i,
 				exclude: /node_modules/,
 				use: { loader: 'babel-loader' },
 			},
 			{
 				test: /\.(s[ac]|c)ss$/i,
 				use: [
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: { publicPath: '' },
+					},
 					'css-loader',
 					'postcss-loader',
 					'sass-loader',
 				],
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				type: 'asset',
 			},
 		],
 	},
