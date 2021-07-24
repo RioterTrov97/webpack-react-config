@@ -1,9 +1,5 @@
-import './styles/index.css';
-import './styles/newindex.scss';
+import { render } from 'react-dom';
 
-const numbers = { 1: [0, 1, 2], 2: [5, 0, 1, 2] };
+import App from './components/App';
 
-const newNumbers = [2, 32, 4];
-
-console.log(numbers);
-console.log(newNumbers);
+render(<App />, document.getElementById('root'));
